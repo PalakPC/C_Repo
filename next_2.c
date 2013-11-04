@@ -8,37 +8,20 @@
  
 // Linux Kernel/LKM headers: module.h is needed by all modules and kernel.h is needed for KERN_INFO.
 #include <linux/module.h>    // included for all kernel modules
+#include <linux/moduleparam.h>
 #include <linux/kernel.h>    // included for KERN_INFO
 #include <linux/init.h>        // included for __init and __exit macros
-#include <asm/uaccess.h>
+#include <linux/stat.h>
 
-#define message_length 80
-static char message[message_length];
+
+static char *message = "Error";
+
+module_param(message, charp, 0000);
+MODULE_PARM_DESC(message, "A character string");
  
 static int __init hello_init(void)
 {
-    	int l;
-	int i;
-    	int *p;
-   	printk(KERN_INFO "Hello world!\n");
-    	printk(KERN_INFO "Enter length of string: ");
-   	put_user(l, p);
-   	char *buf;
-    	for (i=0; i<l; ++i)
-   	{
-		get_user(message[i], buf+i);
-    	}
-    	message[i]='\0';
-	char *ptr=(char *)kmalloc((l+1)*sizeof(char), GFP_KERNEL);
-	for(i=0; message[i]!='\0'; ++i)
-	{
-		*(ptr+i)=message[i];
-	} 
-	printk(KERN_INFO "String is:\n"); 
-	for (i=0; i<l; ++i)
-	{
-		printk(KERN_INFO , *(ptr+i));
-	}  
+	printk(KERN_INFO "%s\n", message);
 	return 0;    // Non-zero return means that the module couldn't be loaded.   
 }
  
