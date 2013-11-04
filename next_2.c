@@ -10,6 +10,7 @@
 #include <linux/module.h>    // included for all kernel modules
 #include <linux/kernel.h>    // included for KERN_INFO
 #include <linux/init.h>        // included for __init and __exit macros
+#include <asm/uaccess.h>
 
 #define message_length 80
 static char message[message_length];
@@ -17,12 +18,13 @@ static char message[message_length];
 static int __init hello_init(void)
 {
     	int l;
+	int i;
     	int *p;
    	printk(KERN_INFO "Hello world!\n");
     	printk(KERN_INFO "Enter length of string: ");
    	put_user(l, p);
    	char *buf;
-    	for (int i=0; i<l; ++i)
+    	for (i=0; i<l; ++i)
    	{
 		get_user(message[i], buf+i);
     	}
