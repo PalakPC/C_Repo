@@ -14,18 +14,19 @@
 #include <linux/stat.h>
 
 
-static char message[25][25];
+static int message[25];
 int num = 0;
-module_param_array(message, charp, &num , 0000);
-MODULE_PARM_DESC(message, "A character string array");
+module_param_array(message, int, &num , 0);
+MODULE_PARM_DESC(message, "An array");
  
 static int __init hello_init(void)
 {
 	int i=0;
 	for(i=0; i<num; ++i)
 	{
-		printk(KERN_INFO "%s", message[i]);
+		printk(KERN_INFO "%d ", message[i]);
 	}
+	printk(KERN_INFO "%d", &num);
 	return 0;    // Non-zero return means that the module couldn't be loaded.   
 }
  
