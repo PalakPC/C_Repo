@@ -14,9 +14,9 @@
 #include <linux/stat.h>
 
 
-static char *message[25];
+static char message[25][25];
 int num = 0;
-module_parm_array(message, charp, num , 0000);
+module_param_array(message, charp, &num , 0000);
 MODULE_PARM_DESC(message, "A character string array");
  
 static int __init hello_init(void)
