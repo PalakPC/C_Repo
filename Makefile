@@ -1,4 +1,4 @@
-obj-m := next_2.o
+obj-m := new.o
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
  
