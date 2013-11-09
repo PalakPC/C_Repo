@@ -1,15 +1,12 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
-#include<fstream.h>
 
 void encrypt();
 void decrypt();
 
-void main()
+int main()
 {
-	clrscr();
 	int c;
 choice: printf("Choose:\n1. Encrypt\n2.Decrypt\nEnter your choice: ");
 	scanf("%d", &c);
@@ -22,48 +19,49 @@ choice: printf("Choose:\n1. Encrypt\n2.Decrypt\nEnter your choice: ");
 		default:printf("Invalid choice. Reenter.");
 			goto choice;
 	};
-	getch();
+	return 0;
 }
 
 void encrypt()
 {
-	char *input;
-	char *passkey;
+	char input[100];
+	char passkey[100];
 	char c, n=0;
-	int size=0, l=0, i=0, j=0;
-	ifstream ifile;
-	ifile.open("input.txt");
-	ofstream ofile;
-	ofile.open("output.txt");
+	int size=0, l=0, i=0, j=0, p;
+	FILE *ifile, *ofile;
+	ifile=fopen("input.txt", "r");
+	ofile=fopen("output.txt", "w");
 	printf("Assuming message to be encrypted is already in input.txt");
-	while(!ifile.eof())
+	while(fgetc(ifile)!=EOF)
 	{
-		*(input+size)=ifile.get();
+		input[size]=fgetc(ifile);
 		++size;
 	}
-	c=size;
+	p=size;
 	if(size<256)
 	{
-		ofile.put(c);
-		ofile.put(n);
+		c=p;
+		fputc(c, ofile);
+		fputc(n, ofile);
 	}
 	else
 	{	
-		while (c>=256)
+		while (p>=256)
 		{
-			c=c-256;
+			p=-256;
 			++n;
 		}
-		ofile.put(c);
-		ofile.put(n);
+		c=p;
+		fputc(c, ofile);
+		fputc(n, ofile);
 	}
 	printf("Enter passkey: ");
 	gets(passkey);
 	l=strlen(passkey);
 	while(i<size)
 	{
-		c=(*(input+i))+(*(passkey+j));
-		ofile.put(c);
+		c=input[i]+passkey[j];
+		fputc(c, ofile);
 		++i;
 		++j;
 		if(j==l)
@@ -74,33 +72,32 @@ void encrypt()
 	i=i+2;
 	while(i<2048)
 	{
-		c=random(256);
-		ofile.put(c);
+		c=random();
+		fputc(c, ofile);
 	}
-	ifile.close();
-	ofile.close();
+	close(ifile);
+	close(ofile);
 	printf("Encryption done. Encrypted code in output.txt");
 }
 
 void decrypt()
 {
-	ifstream ifile;
-	ifile.open("input.txt");
-	ofstream ofile;
-	ofile.open("output.txt");	
+	FILE *ifile, *ofile;
+	ifile=fopen("input.txt", "r");
+	ofile=fopen("output.txt", "w");	
 	int size, n, l, i=0, j=0;
 	char c;
-	char *input, *passkey;	
+	char input[100], passkey[100];	
 	printf("Assuming the message to be decrypted is already in input.txt");
-	size=ifile.get();
-	n=ifile.get();
+	size=fgetc(ifile);
+	n=fgetc(ifile);
 	if(n!=0)
 	{
 		size=size+(n*256);
 	}
 	while(i<size)
 	{
-		*(input+i)=ifile.get();
+		input[i]=fgetc(ifile);
 		++i;
 	}
 	printf("Enter passkey: ");
@@ -109,7 +106,8 @@ void decrypt()
 	i=0;
 	while(i<size)
 	{
-		c=(*(input+i))-(*(passkey+j));
+		c=input[i]-passkey[j];
+		fputc(c, ofile);
 		++i;
 		++j;
 		if(j==l)
@@ -118,8 +116,8 @@ void decrypt()
 		}
 	}
 	printf("Decryption done. Output in output.txt");
-	ifile.close();
-	ofile.close();
+	close(ifile);
+	close(ofile);
 }
 
 
