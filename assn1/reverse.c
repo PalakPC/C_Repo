@@ -5,16 +5,20 @@ void reverse(char *str, int len) {
 	int pos = 0;
 	int caret = len;
 	reversed[len] = '\0';
-	for (int i = len - 1; i >= -1; --i){
+	int i = len - 1; 
+	while(i >= -1){
 		if (i == -1 || str[i] == ' '){
-			for (int j = i + 1; j < caret; ++j){
+			int j = i + 1; 
+			while(j < caret){
 				reversed[pos++] = str[j];
+				j++;
 			}
 			if (i != -1) {
 				reversed[pos++] = ' ';
 			}
 			caret = i;
 		}
+		i--;
 	}
 	printf("%s\n", reversed);
 }

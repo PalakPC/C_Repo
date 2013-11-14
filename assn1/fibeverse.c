@@ -6,6 +6,7 @@
 int main(int argc, char *argv[]) {
 	
 	int i=1;	
+
 	#ifdef REVERSE
 		
 		if (i < argc) {
@@ -13,6 +14,7 @@ int main(int argc, char *argv[]) {
 			i++;
 		}
 
+	
 	#elif FIBONACCI
 		
 		if (i < argc) {
