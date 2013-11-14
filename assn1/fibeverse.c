@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 	
 	int i=1;	
 
-	#ifdef REVERSE
+	#if (defined REVERSE) && (!defined FIBONACCI)
 		
 		if (i < argc) {
 			reverse(argv[i], strlen(argv[i]));
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 		}
 
 	
-	#elif FIBONACCI
+	#elif (defined FIBONACCI) && (!defined REVERSE)
 		
 		if (i < argc) {
 			print_fib(atoi(argv[i]));
