@@ -3,19 +3,19 @@
 int main()
 {
 	int n;
-	char c, msg[50], pw[30];
+	char c, msg[50], pw[30], f[5];
 	FILE *ofile;
 	int lm, lp, i=0, j=0;
 	printf("Choose:\n1.Encrypt\n2.Decrypt\nEnter your choice (1-2): ");
 	scanf("%d", &n);
-	fflush(stdin);		
+	fgets(f, 5, stdin);		
 	if(n==1)
 	{
 		printf("Enter a message to encrypt: ");
-		scanf("%s", &msg);
+		fgets(msg, 50, stdin);
 		printf("The string is: %s\n", msg);						
 		printf("Enter passkey: ");
-		scanf("%s", &pw);		
+		fgets(pw, 30, stdin);		
 		printf("The passkey is: %s\n", pw);
 		printf("The encrypted text is written to output.txt\n");
 		ofile=fopen("output.txt", "w");
@@ -37,7 +37,7 @@ int main()
 	else if(n==2)
 	{
 		printf("Enter passkey: ");
-		scanf("%s", &pw);
+		fgets(pw, 30, stdin);
 		printf("The passkey is: %s\n", pw);
 		lp=strlen(pw);
 		ofile=fopen("output.txt", "r");
