@@ -1,0 +1,3 @@
+Program to demonstrate compilation pipeline.
+
+It can print the fibonacci number and reverse the string, or either of them, depending upon the compilation and command line arguments provided.
