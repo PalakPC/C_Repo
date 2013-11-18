@@ -5,3 +5,4 @@ Programs arranged in different folders:
 3. encrypt: C program to encrypt and decrypt messages using passkey
 4. assn1: C program to depict compilation pipeline
 5. core-c: C programs for basics of C programming
+6. java: java program to sort command line arguments by quicksort
