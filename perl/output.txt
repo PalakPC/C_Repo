@@ -1,0 +1,6 @@
+int i	3
+int j	4
+int main	6
+int int	8
+float r	9
+int k	9

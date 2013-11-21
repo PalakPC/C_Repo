@@ -1,0 +1,7 @@
+Perl script to print the instances of all ints and floats of a program in a text file.
+
+The input and output file path should be specified as command line arguments.
+
+For example: ./f.pl -v -i <inputfilepath> -o <outputfilepath>
+
+-v symbolizes that only variables have to be reported. -f instead would report function names as well

@@ -6,3 +6,4 @@ Programs arranged in different folders:
 4. assn1: C program to depict compilation pipeline
 5. core-c: C programs for basics of C programming
 6. java: java program to sort command line arguments by quicksort
+7. perl: perl script to print the instances of all ints and floats of a program in a file
