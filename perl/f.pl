@@ -2,16 +2,29 @@
 
 use strict;
 use warnings;
+use Getopt::Long;
+
+my ($input, $output);
+my $v = '';
+my $f = '';
+
+usage () if (@ARGV < 1 or !GetOptions('v' => \$v, 'f' => \$f, 'i=s' => \$input, 'o=s' => \$output));
+
+sub usage
+{
+	print "Unknown option: @_\n" if (@_);
+	print "usage: program [--i inputfile] [--o outputfile]\n";
+	exit;
+}
 
 my $regexv = qr|\b((int\|float)\s[A-Z, a-z, _]\w*(?!\())\b|;
 my $regexf = qr|\b((int\|float)\s[A-Z, a-z, _]\w*)\b|;
 
-my $file = $ARGV[0];
-open(FILE, $file);
+open(FILE, "<$input");
 
-open(OUT, ">output.txt");
+open(OUT, ">$output");
 
-if($ARGV[1] eq "v")
+if($v eq '1' && $f eq '')
 {
 	while(<FILE>)
 	{
@@ -21,7 +34,7 @@ if($ARGV[1] eq "v")
 		}
 	}
 }
-elsif($ARGV[1] eq "f")
+elsif($v eq '' && $f==1)
 {
 	while(<FILE>)
 	{
@@ -33,5 +46,5 @@ elsif($ARGV[1] eq "f")
 }
 else
 {
-	print "Invalid argument\n";
+	print "Invalid arguments\n";
 }
