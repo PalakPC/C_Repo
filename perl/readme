@@ -1,7 +1,7 @@
 Perl script to print the instances of all ints and floats of a program in a text file.
 
-The input and output file path should be specified as command line arguments.
+The input file should be specified as command line arguments.
 
-For example: ./f.pl -v -i <inputfilepath> -o <outputfilepath>
+For example: perl -i f.pl input.c v
 
--v symbolizes that only variables have to be reported. -f instead would report function names as well
+v symbolizes that only variables have to be reported. f instead would report function names as well
