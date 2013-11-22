@@ -1,79 +1,92 @@
 public class sort
-{
+{ 
+	static int n=0;
 	static float[] arr;
+	static float[] numbers;
+	static int number;
 
-	public class Quicksort  
+	public static class qsort
 	{
-		private int[] numbers;
-		private int number;
-
-		public void sort(int[] values) 
+		public void sort(float[] values)
 		{
-			if (values ==null || values.length==0)
+			if(values==null||values.length==0)
 			{
-		        	return;
+				return;
 			}
-			
-			this.numbers = values;
-			number = values.length;
-			quicksort(0, number - 1);
+			numbers=values;
+			number=values.length;
+			quicksort(0, number-1);
 		}
-		
-		private void quicksort(int low, int high) 
+
+		private void quicksort(int low, int high)
 		{
-			int i = low, j = high;
-			int pivot = numbers[low + (high-low)/2];
-			
-			while (i <= j) 
+			int i=low, j=high;
+			float pivot=numbers[low+(high-low)/2];
+
+			while(i<=j)
 			{
-				while (numbers[i] < pivot) 
-				{				
-					i++;
+				while(numbers[i]<pivot)
+				{
+					++i;
 				}
 				
-				while (numbers[j] > pivot) 
+				while(numbers[j]>pivot)
 				{
-					j--;
+					--j;
 				}
-		
-				if (i <= j) 
+
+				if(i<=j)
 				{
-				        exchange(i, j);
-				        i++;
-					j--;
+					exchange(i, j);
+					++i; 
+					--j;
 				}
 			}
-			
-			if (low < j)
+
+			if(low<j)
 			{
 				quicksort(low, j);
 			}
-			
-			if (i < high)
-			{									        quicksort(i, high);
+
+			if(i<high)
+			{
+				quicksort(i, high);
 			}
 		}
-	 	
-		private void exchange(int i, int j) 
+
+		private void exchange(int i, int j)
 		{
-		        int temp = numbers[i];
-		        numbers[i] = numbers[j];
-		        numbers[j] = temp;
+			float temp=numbers[i];
+			numbers[i]=numbers[j];
+			numbers[j]=temp;
 		}
-	} 
-	
+	}
+
 	public static void main (String[] args)
 	{
-		int i=0;
 		arr = new float[50];
-		
-		while(i<args.length)
+	
+		while(n<args.length)
 		{
-			arr[i]=float.parseFloat(args[i]);
-			i=i+1;
+			try
+			{
+				float a=Float.parseFloat(args[n]);
+				arr[n]=a;
+			}
+			catch(NumberFormatException e)
+			{
+				System.out.println("Your argument is a non-float");
+			}
+			n=n+1;
 		}
-
-		Quicksort q;
+		
+		qsort q = new qsort();
 		q.sort(arr);
-	}
-}
+		n=50-args.length;
+		while (n<numbers.length)
+		{
+			System.out.println(numbers[n]);
+			n=n+1;
+		}
+	}	
+}	
