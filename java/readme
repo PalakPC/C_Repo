@@ -1,0 +1,5 @@
+Java program to sort the float command line arguments provided by quicksort.
+
+Run th program by "java sort 3, 5, 2"
+
+The sorted numbers are printed on the terminal.
