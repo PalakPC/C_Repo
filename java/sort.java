@@ -7,14 +7,14 @@ public class sort
 
 	public static class qsort
 	{
-		public void sort(float[] values)
+		public void sort(float[] values, int x)
 		{
 			if(values==null||values.length==0)
 			{
 				return;
 			}
 			numbers=values;
-			number=values.length;
+			number=x;
 			quicksort(0, number-1);
 		}
 
@@ -81,9 +81,10 @@ public class sort
 		}
 		
 		qsort q = new qsort();
-		q.sort(arr);
-		n=50-args.length;
-		while (n<numbers.length)
+		q.sort(arr, n);
+		n=0;
+		
+		while (n<args.length)
 		{
 			System.out.println(numbers[n]);
 			n=n+1;
