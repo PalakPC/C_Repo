@@ -6,5 +6,4 @@ float s	5
 float ee	6
 int ag	7
 float s	8
-float main	9
 int int	11
