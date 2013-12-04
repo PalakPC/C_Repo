@@ -4,7 +4,9 @@
 
 char **allocate2D(int rows, int columns);
 
-void (quicksort)(int*, int*);
+void (*quicksort)(int*, int*);
+
+void quick(int*, int*);
 
 char s[50][30];
 
@@ -61,7 +63,8 @@ int main(int argc, char *argv[])
 	high=(int*)malloc(sizeof(int));
 	*low=0;
 	*high=(*count)-1;
-	(quicksort)(low, high);
+	quicksort=quick;
+	(*quicksort)(low, high);
 	free(low);
 	free(high);
 	(*i)=0;
@@ -87,7 +90,7 @@ char** allocate2D(int rows,int cols)
 	}
 }
 
-void (quicksort)(int *low, int *high)
+void (quick)(int *low, int *high)
 {
 	int *i, *j, *temp;
 	i=(int*)malloc(sizeof(int));
@@ -125,11 +128,11 @@ void (quicksort)(int *low, int *high)
 	}
 	if((*low)<(*j))
 	{
-		(quicksort)(low, j);
+		(*quicksort)(low, j);
 	}
 	if((*i)<(*high))
 	{
-		(quicksort)(i, high);
+		(*quicksort)(i, high);
 	}
 	free(i);
 	free(j);
