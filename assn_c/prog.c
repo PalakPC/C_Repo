@@ -2,13 +2,13 @@
 #include<stdlib.h>
 #include<string.h>
 
-char **allocate2D(int rows, int columns);
+char **allocate2D(int *rows, int *columns);
 
 void (*quicksort)(int*, int*);
 
 void quick(int*, int*);
 
-char s[50][30];
+char **s;
 
 int *carr;
 
@@ -16,9 +16,15 @@ int main(int argc, char *argv[])
 {
 	FILE *ifile;
 	char *str;
-	int *count, *i, *j, *k;
+	int *count, *i, *j, *k, *rows, *col;
+	rows=(int*)malloc(sizeof(int));
+	col=(int*)malloc(sizeof(int));
+	*rows=50;
+	*col=30;
 	ifile=fopen(argv[1], "r");
-	//s=allocate2D(50, 30);
+	s=allocate2D(rows, col);
+	free(rows);
+	free(col);
 	count=(int*)malloc(sizeof(int));
 	(*count)=0;
 	while (fscanf(ifile, "%s", (s[*count]))!=EOF)
@@ -79,15 +85,17 @@ int main(int argc, char *argv[])
 	close(ifile);
 }
 
-char** allocate2D(int rows,int cols)
+char ** allocate2D(int *rows,int *cols)
 {
 	char **arr2D;
-	int i;
-	arr2D = (char**)malloc(rows*sizeof(char*));
-	for(i=0;i<rows;i++)
+	int *i;
+	i=(int *)malloc(sizeof(int));
+	arr2D = (char**)malloc((*rows)*sizeof(char*));
+	for((*i)=0;(*i)<(*rows);(*i)++)
 	{
-		arr2D[i] = (char*)malloc(cols*sizeof(char));
+		arr2D[*i] = (char*)malloc((*cols)*sizeof(char));
 	}
+	return arr2D;
 }
 
 void (quick)(int *low, int *high)
