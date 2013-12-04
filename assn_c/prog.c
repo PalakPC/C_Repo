@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
 	free(i);
 	free(count);
 	free(carr);
+	free(s);
 	close(ifile);
 }
 
