@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	int *count, *i, *j, *k, *rows, *col;
 	rows=(int*)malloc(sizeof(int));
 	col=(int*)malloc(sizeof(int));
-	*rows=50;
+	*rows=100;
 	*col=30;
 	ifile=fopen(argv[1], "r");
 	s=allocate2D(rows, col);
