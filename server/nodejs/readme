@@ -1,0 +1,5 @@
+Node js server to print the rows of a mysql table.
+
+Upon execution, when the address 192.168.174.130:3000 is pinged, the rows of table are displayed.
+
+Work under progress.
