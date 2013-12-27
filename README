@@ -1,13 +1,22 @@
 Programs arranged in different folders:
 
-1. hello: Kernel Module to print "Hello World!" to log
-2. cmdl-arg: Kernel Module to print command line arguments to log
-3. encrypt: C program to encrypt and decrypt messages using passkey
-4. assn1: C program to depict compilation pipeline
-5. core-c: C programs for basics of C programming
-6. java: java program to sort command line arguments by quicksort
-7. perl: perl script to print the instances of all ints and floats of a program in a file
-8. assn_c: C program to print a list of all words occuring in a file in decreasing order of number of occurances
-9. nodejs: node.js server to print all file names from sql database
-10. TCP: TCP Socket C program
-11. paccap: Packet capture program in C
+1. cprog: Programs in C
+	1.1 assn1: C program to depict compilation pipeline
+	1.2 assn_c: C program to print a list of all words occuring in a file in decreasing order of number of occurances
+	1.3 core-c: C programs for basics of C programming
+	1.4 encrypt: C program to encrypt and decrypt messages using passkey
+	1.5 paccap: Packet capture program in C
+	1.6 TCP: TCP Socket C program
+
+2. java: Programs in java
+	2.1 sort: java program to sort command line arguments by quicksort
+
+3. kmod: Kernel modules
+	3.1 hello: Kernel Module to print "Hello World!" to log
+	3.2 cmdl-arg: Kernel Module to print command line arguments to log
+
+4. perl: Programs in perl
+	4.1 ifprint: perl script to print the instances of all ints and floats of a program in a file
+
+5. nodejs: node.js server to print all file names from sql database
+

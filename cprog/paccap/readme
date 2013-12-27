@@ -1,0 +1,9 @@
+Packet capturing program in C.
+
+Use ./prog to run. It would list all the packet details.
+
+Port can also be specified. For example ./prog -i eth0 tcp port 80
+
+Use ctrl+c to stop capturing.
+
+Work under progress.
