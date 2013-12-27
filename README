@@ -18,5 +18,5 @@ Programs arranged in different folders:
 4. perl: Programs in perl
 	4.1 ifprint: perl script to print the instances of all ints and floats of a program in a file
 
-5. nodejs: node.js server to print all file names from sql database
-
+5. server: server related programs
+	5.1 nodejs: node.js server to print all file names from sql database
