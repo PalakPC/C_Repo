@@ -1,6 +1,26 @@
-<html>
-<body>
-<b>YO PEOPLE</b>
-<button type="button">show table</button>
-</body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>show demo</title>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<button>Show tables</button>
+		<p style="display: none">
+			Palak
+		</p>
+		<script>
+			$("button").click(function(){
+				$("p").show();
+			});
+		</script>
+		<script>
+			function callnode(){
+				$.ajax({
+					url: 'http://127.0.0.1:8888/',
+					dataType: "jsonp",
+					type: 'POST',
+
+	</body>
 </html>
