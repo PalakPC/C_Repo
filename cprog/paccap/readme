@@ -6,4 +6,5 @@ Port can also be specified. For example ./prog -i eth0 tcp port 80
 
 Use ctrl+c to stop capturing.
 
-Work under progress.
+Working on how to stop loop with user input. Currently commented.
+Rest done.
