@@ -1,10 +1,5 @@
 Packet capturing program in C.
 
-Use ./prog to run. It would list all the packet details.
+Use sudo ./nprog to run. 
 
-Port can also be specified. For example ./prog -i eth0 tcp port 80
-
-Use ctrl+c to stop capturing.
-
-Working on how to stop loop with user input. Currently commented.
-Rest done.
+It would run until some key is pressed alongwith enter. Then it would list all the packet details.

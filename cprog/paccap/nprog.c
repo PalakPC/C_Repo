@@ -9,6 +9,10 @@
 #include <netinet/tcp.h>
 #include <netinet/ether.h>
 #include <errno.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
 
 void my_func(u_char *useless,const struct pcap_pkthdr* pkthdr,const u_char* packet);
 
@@ -29,10 +33,10 @@ int main(int argc, char **argv)
 	struct ether_header *eptr;
 	u_char *ptr;
 
-//	int fd = fileno(stdin);
-//	struct timeval tv = {0,0};
-//	fd_set fdset;
-//	int s;
+	int fd = fileno(stdin);
+	struct timeval tv = {0,0};
+	fd_set fdset;
+	int s;
 
 	dev = pcap_lookupdev(errbuf);
 	data = allocate2D(50, 30);
@@ -48,42 +52,42 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 	
-	//sleep(5);
+	sleep(5);
 
-//	do
-//	{
-//		sleep(1);
-//		FD_ZERO(&fdset);
-//	        FD_SET(fd, &fdset);
-//		packet = pcap_next(descr, &hdr);
-		/*if(packet == NULL)
+	do
+	{
+		sleep(1);
+		FD_ZERO(&fdset);
+	        FD_SET(fd, &fdset);
+		packet = pcap_next(descr, &hdr);
+/*		if(packet == NULL)
 		{
 			printf("Didn't grab packet\n");
 			exit(1);
 		}*/
 
-		pcap_loop(descr, 5, my_func, NULL);
-//		struct ip *ip;
-//		int j;
-//		struct tcphdr *tcp;
-//		ip = (struct ip*)(packet+sizeof(struct ether_header));
-//		tcp = (struct tcphdr*)(packet+sizeof(struct ether_header)+sizeof(struct ip));
-//		char *src = inet_ntoa(ip->ip_src);
-//		data[count] = src;
-//		cdata[count] = 1;
-//		if(count!=0)
-//		{
-//	        	for(j=0; j<count; ++j)
-//			{
-//				if(data[count]==data[j])
-//				{
-//					count--;
-//					cdata[j]++;
-//				}
-//			}
-//		}	
-//		count++;
-//	}while((s = select(fd+1, &fdset, NULL, NULL, &tv)) == 0);	
+//		pcap_loop(descr, 5, my_func, NULL);
+		struct ip *ip;
+		int j;
+		struct tcphdr *tcp;
+		ip = (struct ip*)(packet+sizeof(struct ether_header));
+		tcp = (struct tcphdr*)(packet+sizeof(struct ether_header)+sizeof(struct ip));
+		char *src = inet_ntoa(ip->ip_src);
+		data[count] = src;
+		cdata[count] = 1;
+		if(count!=0)
+		{
+	        	for(j=0; j<count; ++j)
+			{
+				if(data[count]==data[j])
+				{
+					count--;
+					cdata[j]++;
+				}
+			}
+		}	
+		count++;
+	}while((s = select(fd+1, &fdset, NULL, NULL, &tv)) == 0);	
 	
 	printf("******************************************************************");
 	printf("\nIP Address\tPacket Count\n");
