@@ -1,5 +1,5 @@
 {
-	"name": "dbproject-1.0",
+	"name": "asNodejs-1.0",
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
@@ -7,6 +7,10 @@
 		"mysql": "*",
 		"ejs": "*",
 		"url": "*",
-		"util": "*"
+		"util": "*",
+		"underscore": "*",
+		"bcrypt-nodejs": "*",
+		"path": "*",
+		"querystring": "*"
 	}
 }

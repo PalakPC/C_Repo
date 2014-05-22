@@ -1,70 +1,41 @@
-//vars declared and defined
+var mysql = require("mysql");
+var fs = require("fs");
 var url = require("url");
 var util = require("util");
-var mysql = require("mysql");
 var express = require("express");
-
-var connection = mysql.createConnection({
-			user: "root",
-			password: "fire",
-			host: "127.0.0.1",
-			database: "myfiles",
-		});
-
-//Not sure if this works correctly. TODO
-function handleDisconnect(connection) {
-	connection.on('error', function(err){
-				console.log('\nReconnecting...  Lost connection: ' + err.stack);
-				connection.destroy();
-				connection = mysql.createConnection(connection.config);
-				handleDisconnect(connection);
-				connection.connect();
-			});
-}
-
-handleDisconnect(connection);
-connection.connect();
+var config = require("./config/config.js");
+var MysqlController = require("./controllers/mysql.js");
+var _ = require("underscore");
 
 var app = express();
 
-app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
-
-app.use(express.json());
-app.use(express.bodyParser());
-app.use(express.urlencoded());
-app.use(express.logger('dev'));
-app.use(express.static(__dirname + '/public'));
-
-app.get('/home', function(req, res){
-		res.render('home.html');
-		});
-app.get('/', function(req, res){
-		res.render('home.html');
-		connection.query('select * from myfilenames', function(err, rows, fields){
-			res.send(rows[1].sno + ' ' + rows[1].name);
-		});
-		/*app.post('/login', function(req, res){
-			var uname = req.body.username;
-			//console.log(uname);
-			var pw = req.body.password;
-			//console.log(pw);
-			connection.query('select * from user', function(err, rows, fields){
-				var i = 0;
-				var c = 0;
-				for (i=0; i<rows.length; ++i){
-					if((rows[i].uname==uname)&&(rows[i].pword==pw)){
-						console.log("success");
-						c=1;
-					}
-				}
-				if(c==0){
-					console.log("denied");//would route back to login page with error msg.
-				}
-				else{
-					res.render('welcome.html');
-				}
-			});
-		});*/
+var connection = mysql.createConnection({
+		host: 'localhost',
+		user: 'root',
+		password: 'palak',
+		database: 'files'
 	});
-app.listen(8888);
+connection.connect();
+
+require("./config/express.js")(app, config);
+
+app.get('/', function(req, res){
+		res.redirect("home");
+	});
+
+app.get("/home", MysqlController.home);
+app.get("/inputQuery", function(req, res){
+	var results;
+	connection.query('select * from file', function(err, rows, fs){
+		if (err) {
+			console.log('Something is broken');
+			console.log(err);
+			console.log(fs);
+		}
+		results = JSON.stringify(rows);
+		res.json(results);
+	});
+});
+
+app.listen(config.SERVER_PORT);
+console.log("Mysql server up and running at --> " + config.SERVER_PORT);

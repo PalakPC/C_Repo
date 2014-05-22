@@ -1,6 +1,6 @@
 Programs for basics in writing code.
 
-1. ex1.c: Program to print first hundred triangular numbers
+1. ex1.c: Program to print first hundred triangular numbers (give -lm at the end while compiling, to include math.h) 
 2. ex2.c: Program to print factorial of 4 and 5
 3. p1.c: Program to print given command line arguments using goto and if
 4. p2.c: Program to print odd numbers between 0 and 10 by seven different ways
