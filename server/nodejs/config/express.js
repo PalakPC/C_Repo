@@ -2,7 +2,7 @@ var express = require("express");
 var MysqlController = require("../controllers/mysql.js");
 
 module.exports = function(app, config){
-	app.configure(MysqlController.configure);
+//	app.configure(MysqlController.configure);
 	app.use(express.json());
 	app.use(express.urlencoded());
 	app.use(express.methodOverride());

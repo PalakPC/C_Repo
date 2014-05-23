@@ -4,8 +4,9 @@ var url = require("url");
 var util = require("util");
 var express = require("express");
 var config = require("./config/config.js");
-var MysqlController = require("./controllers/mysql.js");
+//var MysqlController = require("./controllers/mysql.js");
 var _ = require("underscore");
+var queryString = require("querystring");
 
 var app = express();
 
@@ -23,7 +24,9 @@ app.get('/', function(req, res){
 		res.redirect("home");
 	});
 
-app.get("/home", MysqlController.home);
+app.get("/home", function(req, res, next){
+		res.sendfile("home.html", {root: "./views/"});
+	});
 app.get("/inputQuery", function(req, res){
 	var results;
 	connection.query('select * from file', function(err, rows, fs){
