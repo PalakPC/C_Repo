@@ -4,7 +4,6 @@ var url = require("url");
 var util = require("util");
 var express = require("express");
 var config = require("./config/config.js");
-//var MysqlController = require("./controllers/mysql.js");
 var _ = require("underscore");
 var queryString = require("querystring");
 

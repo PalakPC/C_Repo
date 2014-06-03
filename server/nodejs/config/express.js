@@ -1,5 +1,5 @@
 var express = require("express");
-var MysqlController = require("../controllers/mysql.js");
+//var MysqlController = require("../controllers/mysql.js");
 
 module.exports = function(app, config){
 //	app.configure(MysqlController.configure);
