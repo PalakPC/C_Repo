@@ -1,16 +1,11 @@
 {
-	"name": "asNodejs-1.0",
-	"version": "0.0.1",
-	"private": true,
-	"dependencies": {
-		"express": "*",
-		"mysql": "*",
-		"ejs": "*",
-		"url": "*",
-		"util": "*",
-		"underscore": "*",
-		"bcrypt-nodejs": "*",
-		"path": "*",
-		"querystring": "*"
+	"name" : "Node.js-1.0",
+	"version" : "0.0.1",
+	"private" : true,
+	"dependencies" : {
+		"express" : "*",
+		"mysql" : "*",
+		"path" : "*"
 	}
 }
+
