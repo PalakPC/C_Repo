@@ -1,7 +1,0 @@
-Sample TCP socket C program
-
-Client and server files should be compiled and then run on separate windows. 
-
-Port is defined by default in port.h. But user can specify the port with the server, for example, ./server -p 4444
-
-Same port number should then be specified with client as well, ./client -h yourhostname -p 4444
