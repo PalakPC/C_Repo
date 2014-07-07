@@ -1,0 +1,5 @@
+Packet capturing program in C.
+
+Use sudo ./nprog to run. 
+
+It would run until some key is pressed alongwith enter. Then it would list all the packet details.
