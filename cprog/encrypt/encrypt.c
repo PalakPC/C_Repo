@@ -1,4 +1,4 @@
-//C program to encrypt and decrypt messages using a passkey.
+/*C program to encrypt and decrypt messages using a passkey.*/
 
 #include <stdio.h>
 #include <string.h>
@@ -11,7 +11,7 @@ int main () {
 	time_t t;
 
 	printf ("Choose:\n1.Encrypt\n2.Decrypt\nEnter your choice (1-2): ");
-	scanf ("%d%c", &ch, &f);	//f is used to remove the newline from return character.
+	scanf ("%d%c", &ch, &f);	/*f is used to remove the newline from return character.*/
 
 	if (ch == 1) {
 		printf ("\nEnter a message to encrypt: ");
@@ -22,7 +22,7 @@ int main () {
 		ofile = fopen ("output.txt", "w");
 		
 		lm = strlen (msg);
-		msg[lm - 1] = '\0';	//To skip return character.
+		msg[lm - 1] = '\0';	/*To skip return character.*/
 		lm--;
 		
 		c = lm;
@@ -30,7 +30,7 @@ int main () {
 		++count;
 
 		lp = strlen (pw);
-		pw[lp - 1] = '\0';	//To skip return character.
+		pw[lp - 1] = '\0';	/*To skip return character.*/
 		lp--;
 		
 		c = lp;
@@ -48,7 +48,7 @@ int main () {
 		
 		i = 0;
 		while (i < lm) {
-			c = msg[i] + pw[j];	//Encrypting.
+			c = msg[i] + pw[j];	/*Encrypting.*/
 			fputc (c, ofile);
 			++i;
 			++j;
@@ -60,7 +60,7 @@ int main () {
 		srand ((unsigned)time (&t));
 		while (count < 500) {
 			c = rand () % 256;
-			fputc (c, ofile);	//Creating random encryption code.
+			fputc (c, ofile);	/*Creating random encryption code.*/
 			++count;
 		}
 	
@@ -72,7 +72,7 @@ int main () {
 		fgets (pw1, 30, stdin);
 
 		lp1 = strlen (pw1);
-		pw1[lp1 - 1] = '\0';	//To skip return character.
+		pw1[lp1 - 1] = '\0';	/*To skip return character.*/
 		lp1--;
 
 		ofile = fopen ("output.txt", "r");
@@ -97,7 +97,7 @@ int main () {
 
 			i = 0;
 			while (i < lm) {
-				msg[i] = msg[i] - pw[j];	//Decrypting.
+				msg[i] = msg[i] - pw[j];	/*Decrypting.*/
 				++i;
 				++j;
 				if (j == lp)

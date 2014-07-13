@@ -1,4 +1,4 @@
-//Header file for Fibonacci number calculation.
+/*Header file for Fibonacci number calculation.*/
 
 #ifndef _FIBONACCI_H
 

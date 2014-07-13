@@ -1,4 +1,4 @@
-//C program to print the factorial of 4 and 5.
+/*C program to print the factorial of 4 and 5.*/
 
 #include <stdio.h>
 

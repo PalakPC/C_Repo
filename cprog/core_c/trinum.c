@@ -1,4 +1,4 @@
-//C program to calculate the first hundred triangular numbers.
+/*C program to calculate the first hundred triangular numbers.*/
 
 #include <stdio.h>
 #include <math.h>
@@ -19,6 +19,6 @@ int main () {
 
 void trinum (int x) {
 	int n;
-	n = (x * (x + 1)) / 2;	//nth triangular number is (n (n + 1)) / 2.
+	n = (x * (x + 1)) / 2;	/*nth triangular number is (n (n + 1)) / 2.*/
 	printf ("%d\n", n);
 }

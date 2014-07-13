@@ -1,4 +1,4 @@
-C programs to demonstrate TCP sockets programming.
+C programs to demonstrate TCP sockets programming. Connects a client to a server on a specific port by sockets.
 
 Client and server codes should be compiled and then run on separate terminals. 
 

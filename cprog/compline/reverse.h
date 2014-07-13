@@ -1,4 +1,4 @@
-//Header file for reverse function.
+/*Header file for reverse function.*/
 
 #ifndef _REVERSE_H
 

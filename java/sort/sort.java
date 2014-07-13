@@ -1,4 +1,4 @@
-//Java program to sort the given command-line float arguments in ascending order using quicksort algorithm.
+/*Java program to sort the given command-line float arguments in ascending order using quicksort algorithm.*/
 
 public class sort { 
 	static int n = 0;
@@ -53,7 +53,7 @@ public class sort {
 	
 		while (n < args.length) {
 			try {
-				float a = Float.parseFloat (args[n]);	//Parsing command-line arguments to float.
+				float a = Float.parseFloat (args[n]);	/*Parsing command-line arguments to float.*/
 				arr[n] = a;
 			}
 			

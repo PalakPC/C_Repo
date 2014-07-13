@@ -1,4 +1,4 @@
-//C program to print a list of all words in a file along with their count in decreasing order.
+/*C program to print a list of all words in a file along with their count in decreasing order.*/
 
 #include <stdio.h>
 #include <stdlib.h>

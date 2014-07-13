@@ -1,4 +1,4 @@
-//C program to demonstrate compilation pipeline.
+/*C program to demonstrate compilation pipeline.*/
 
 #include <stdlib.h>
 #include <string.h>

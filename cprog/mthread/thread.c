@@ -27,7 +27,7 @@ int main (int argc, char *argv[])
 	while(c < 500)
 	{
 		a = rand()%6 + 4;
-//		printf ("%d", a);
+		/*printf ("%d", a);*/
 		b = 0; i=0;
 		for (i=0; i<26; ++i)
 		{
@@ -41,16 +41,16 @@ int main (int argc, char *argv[])
 				b=0;
 				c++;
 				close(ofile2);
-			//	b=0;
+				/*b=0;*/
 				break;
 			}
 		}
-	//	c++;
-/*		FILE *ofile2;
+		/*c++;
+		FILE *ofile2;
 		ofile2 = fopen("test.txt", "a");
 		fputc(s, ofile2);
 		close(ofile2);*/
 	}
-//	printf("%d %d", c, b);
+	/*printf("%d %d", c, b);*/
 	return 0;
 }

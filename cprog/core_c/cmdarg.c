@@ -1,4 +1,4 @@
-//C program to print command-line arguments.
+/*C program to print command-line arguments.*/
 
 #include <stdio.h>
 

@@ -20,11 +20,6 @@ $(document).ready (function () {
 				th.appendTo ('#display');
 				tr.appendTo ('#display');
 			} );
-
 		} );
 	} );
-
-	//document.getElementByID("run_button").onclick = function () {
-	//	this.disabled = true;
-	//}
 } );

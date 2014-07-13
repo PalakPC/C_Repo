@@ -1,4 +1,4 @@
-//C functions to compute Fibonacci number.
+/*C functions to compute Fibonacci number.*/
 
 #include <stdio.h>
 

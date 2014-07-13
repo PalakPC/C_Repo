@@ -1,4 +1,4 @@
-//CSS Document
+/*CSS Document*/
 
 body {
 	font-family : 'Nobile', Helvetica, Arial, sans-serif !important;
@@ -19,11 +19,10 @@ body {
 }
 
 #wrapper th {
-	text-align : center;
+   text-align : center;
 }
 
 #Button {
 	text-align : center;
 	padding : 27px 15px 0 50px;
 }
-

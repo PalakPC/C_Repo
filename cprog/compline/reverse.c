@@ -1,4 +1,4 @@
-//C function to reverse the sequence of words in a string.
+/*C function to reverse the sequence of words in a string.*/
 
 #include <stdio.h>
 

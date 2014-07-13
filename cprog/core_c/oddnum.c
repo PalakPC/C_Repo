@@ -1,4 +1,4 @@
-//C program to print odd numbers between 0 and 10 by seven different ways.
+/*C program to print odd numbers between 0 and 10 by seven different ways.*/
 
 #include <stdio.h>
 
