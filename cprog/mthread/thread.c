@@ -1,3 +1,5 @@
+/*C program to print alphabets to a file using multiple threads.*/
+
 #include <stdio.h>
 #include <time.h>
 #include <pthread.h>

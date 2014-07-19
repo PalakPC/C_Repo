@@ -1,9 +1,9 @@
 C :
 
-1. encrypt -	Encrypts or decrypts a message given by user using a passkey.
-2. compline -	Demonstrates compilation pipeline. Prints fibonacci number or reverses string or both depending upon compilation and command-line arguments provided.
-3. core_c -	Demonstrates basics in writing code. Elementary codes for small problems like printing triangular numbers, factorials, command-line arguments, odd numbers.
-4. word_count -	Prints a list of all words in a file along with their count in decreasing order.
+1. encrypt -	     Encrypts or decrypts a message given by user using a passkey.
+2. compline -	     Demonstrates compilation pipeline. Prints fibonacci number or reverses string or both depending upon compilation and command-line arguments provided.
+3. core_c -	     Demonstrates basics in writing code. Elementary codes for small problems like printing triangular numbers, factorials, command-line arguments, odd numbers.
+4. word_count -     Prints a list of all words in a file along with their count in decreasing order.
 5. tcp_socket -	Demonstrates TCP sockets programming. Connects a client to a server on a specific port by sockets.
-6. pac_cap -	Prints a list of packets sent to and received from an IP address.
-7. mthread -	Prints alphabets to a text file using multiple threads.
+6. pac_cap -	     Prints a list of packets sent to and received from an IP address.
+7. mthread -	     Prints alphabets to a text file using multiple threads.

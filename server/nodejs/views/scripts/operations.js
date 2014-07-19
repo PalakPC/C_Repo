@@ -1,3 +1,5 @@
+/*Script to print table.*/
+
 $(document).ready (function () {
 	jQuery ('#wrapper').val ("");
 	$('#run_button').click (function () {
