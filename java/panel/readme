@@ -1,0 +1,3 @@
+Java program to display multiple windows with buttons to maneuver between them.
+
+Upon execution, "Window 1" with a button labelled "Next" is displayed. On clicking this button, "Window 2" is displayed. It has two buttons - "Previous" and "Next". Clicking "Previous" again displays "Window 1", while clicking "Next" displays "Window 3" which has a button  "Previous". Clicking "Previous" redisplays "Window 2".

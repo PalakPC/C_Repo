@@ -1,6 +1,9 @@
 Java program to sort the given command-line float arguments in ascending order using quicksort algorithm.
 
-Program can be run as follows:
+Program can be compiled as follows:
+javac sort.java 
+
+It can then be run as follows:
 "java sort <float arguments separated by spaces>"
 
 The sorted numbers are printed on terminal.
