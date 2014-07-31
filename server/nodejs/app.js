@@ -7,7 +7,9 @@ var config = require ("./config/config.js");
 
 var app = express ();
 
-app.use(express.static(config.ROOT_PATH + "/views")); 
+var SERVER_PORT = 8888;
+
+app.use (express.static (config.ROOT_PATH + "/views") ); 
 
 var connection = mysql.createConnection ( {
 	host: 'localhost',
@@ -36,5 +38,5 @@ app.get ("/inputQuery", function (req, res) {
 	} );
 } );
 
-app.listen (config.SERVER_PORT);
-console.log ("Mysql server up and running at --> " + config.SERVER_PORT);
+app.listen (process.env.PORT || SERVER_PORT);
+console.log ("Mysql server up and running at --> " + SERVER_PORT);
