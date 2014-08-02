@@ -18,6 +18,7 @@ struct t_ioparams
   int first_run;
   int alph_len;
   int word_len;
+  int current_len;
   pthread_mutex_t key;
 }typedef ioparams;
 
@@ -43,18 +44,20 @@ void * print_hello (void *t_params)
       pthread_exit(NULL);
     }
 
-    if(params->alph_len > 9 || params->first_run)
+    if(params->current_len >= params->alph_len  || params->first_run)
     {
       if(!params->first_run)
         fprintf(params->ofile, " ");
       params->alph_len = rand() % 6 + 4;
       params->word_len++;
       params->first_run = 0;
+      params->current_len = 0;
     }
     fprintf(params->ofile, "%c", 65 + t_id);
-    params->alph_len++;
+    params->current_len++;
 
     pthread_mutex_unlock(&params->key);
+    usleep(5000);
   }
 }
 
@@ -64,18 +67,18 @@ int main (int argc, char *argv[])
   ioparams params;
   int i;
   
-  params.id        = 0;
-  params.status    = 0;
-  params.first_run = 1; 
-  params.alph_len  = 0;
-  params.word_len  = 0;
+  params.id          = 0;
+  params.status      = 0;
+  params.first_run   = 1; 
+  params.alph_len    = 0;
+  params.word_len    = 0;
+  params.current_len = 0;
   params.ofile     = fopen ("test.txt", "a");
 
   pthread_mutex_init(&params.key, NULL);
   
   for(i=0; i<=25; i++)
   {
-    //TODO tell threads what the their id is
     if(pthread_create(&threads[i], NULL, print_hello, &params))
     {
       printf ("ERROR in thread create.\n");
