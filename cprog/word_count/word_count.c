@@ -4,52 +4,52 @@
 #include <stdlib.h>
 #include <string.h>
 
-void (*quicksort) (int*, int*);
+void (*quicksort)(int*, int*);
 
-char **allocate2D (int *rows, int *columns);
-void quick (int*, int*);
+char **allocate2D(int *rows, int *columns);
+void quick(int*, int*);
 
 char **s;
 int *carr;
 
-int main (int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 	FILE *ifile;
 	char *str;
 	int *count, *i, *j, *k, *rows, *col, *low, *high;
 
-	rows =(int*) malloc (sizeof (int));
-	col = (int*) malloc (sizeof (int));
+	rows =(int*) malloc(sizeof(int));
+	col = (int*) malloc(sizeof(int));
 	*rows = 100;
 	*col = 30;
 	s = allocate2D(rows, col);
-	free (rows);
-	free (col);
+	free(rows);
+	free(col);
 
-	ifile = fopen (argv[1], "r");
-	count = (int*) malloc (sizeof (int));
+	ifile = fopen(argv[1], "r");
+	count = (int*) malloc(sizeof(int));
 	(*count) = 0;
-	while (fscanf (ifile, "%s", (s[*count])) != EOF) 
+	while(fscanf(ifile, "%s", (s[*count])) != EOF) 
 		(*count)++;
 
-	i = (int*) malloc (sizeof (int));
-	j = (int*) malloc (sizeof (int));
-	k = (int*) malloc (sizeof (int));
-	str = (char*) malloc (30 * sizeof (char));
-	carr = (int*) malloc (30 * sizeof (int));
+	i = (int*) malloc(sizeof(int));
+	j = (int*) malloc(sizeof(int));
+	k = (int*) malloc(sizeof(int));
+	str = (char*) malloc(30 * sizeof(char));
+	carr = (int*) malloc(30 * sizeof(int));
 	
 	(*i) = 0;
-	while ((*i) < (*count)) {
+	while((*i) < (*count)) {
 		(*j) = (*i) + 1;
-		strcpy (str, s[*i]);
+		strcpy(str, s[*i]);
 		*(carr + (*i)) = 1;
 
-		while ((*j) < (*count)) {
-			if (strcmp (str, s[*j]) == 0) {
+		while((*j) < (*count)) {
+			if(strcmp(str, s[*j]) == 0) {
 				++(*(carr + (*i)));
 				(*k) = (*j);
 				
 				while((*k) < (*count)) {
-					strcpy (s[*k], s[(*k) + 1]);
+					strcpy(s[*k], s[(*k) + 1]);
 					++(*k);
 				}
 				
@@ -62,9 +62,9 @@ int main (int argc, char *argv[]) {
 		++(*i);
 	}
 
-	free (j);
-	free (k);
-	free (str);
+	free(j);
+	free(k);
+	free(str);
 
 	low = (int*) malloc (sizeof (int));
 	high = (int*) malloc (sizeof (int));

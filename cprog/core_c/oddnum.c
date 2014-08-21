@@ -2,79 +2,79 @@
 
 #include <stdio.h>
 
-void odd1 () {
+void odd1() {
 	int i;
 	
-	for (i = 0; i <= 10; ++i)
-		if ((i % 2) == 1)
-			printf ("%d\t", i);
+	for(i = 0; i <= 10; ++i)
+		if((i % 2) == 1)
+			printf("%d\t", i);
 	
-	printf ("\n");
+	printf("\n");
 }
 
-void odd2 () {
+void odd2() {
 	int i = 0;
  
-	while (i <= 10) {
-		if ((i % 2) == 1)
-			printf ("%d\t", i);
+	while(i <= 10) {
+		if((i % 2) == 1)
+			printf("%d\t", i);
 		++i;
 	}
 	
-	printf ("\n");
+	printf("\n");
 }
 
-void odd3 () {
+void odd3() {
 	int i = 0;
 	
 	do {
 		if((i % 2) == 1)
-			printf ("%d\t", i);
+			printf("%d\t", i);
 	
 		++i;
-	} while (i <= 10);
+	} while(i <= 10);
 	
-	printf ("\n");
+	printf("\n");
 }
 
-void odd4 () {
+void odd4() {
 	int i = 0;
 
-l1:	if ((i % 2) == 1)
-		printf ("%d\t", i);
+l1:	if((i % 2) == 1)
+		printf("%d\t", i);
 	
 	++i;
 
-	if (i <= 10)
+	if(i <= 10)
 		goto l1;
 	
-	printf ("\n");
+	printf("\n");
 }
 
-void odd5 () {
+void odd5() {
 	int i = 0;
 	
-	while (1) {
-		if ((i % 2) == 1)
-			printf ("%d\t", i);
+	while(1) {
+		if((i % 2) == 1)
+			printf("%d\t", i);
 		++i;
 	
-		if (i > 10)
+		if(i > 10)
 			break;
 	} 
 	
-	printf ("\n");
+	printf("\n");
 }
 
-void odd6 () {
+void odd6() {
 	int a, i = 0;
 	
-	while (i <= 10) {
+	while(i <= 10) {
 		a = i % 2;
 
-		switch (a){
-			case 1: printf ("%d\t", i);
-				break;
+		switch(a){
+			case 1: printf("%d\t", i);
+			        break;
 		}
 		
 		++i;
@@ -83,31 +83,31 @@ void odd6 () {
 	printf("\n");
 }
 
-void odd7 () {
+void odd7() {
 	int a, i = 0;
 	
-	for ( ; ; ) {
+	for( ; ; ) {
 		a = i % 2;
 		
-		if (a == 1)
-			printf ("%d\t", i);
+		if(a == 1)
+			printf("%d\t", i);
 		
 		++i;
 		
-		if (i > 10)
+		if(i > 10)
 			break;
 	}
 
-	printf ("\n");
+	printf("\n");
 }
 
-int main () {
-	odd1 ();
-	odd2 ();
-	odd3 ();
-	odd4 ();
-	odd5 ();
-	odd6 ();
-	odd7 ();
+int main() {
+	odd1();
+	odd2();
+	odd3();
+	odd4();
+	odd5();
+	odd6();
+	odd7();
 	return 0;
 }

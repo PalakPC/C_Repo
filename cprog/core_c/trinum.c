@@ -3,22 +3,22 @@
 #include <stdio.h>
 #include <math.h>
 
-void trinum (int x);
+void trinum(int x);
 
-int main () {
+int main() {
 	int i = 1;
-	printf ("The first hundred triangular numbers are:\n");
+	printf("The first hundred triangular numbers are:\n");
 
-	while (i <= 100) {
-		trinum (i);
+	while(i <= 100) {
+		trinum(i);
 		i++;
 	}
 	
 	return 0;
 }
 
-void trinum (int x) {
+void trinum(int x) {
 	int n;
 	n = (x * (x + 1)) / 2;	/*nth triangular number is (n (n + 1)) / 2.*/
-	printf ("%d\n", n);
+	printf("%d\n", n);
 }

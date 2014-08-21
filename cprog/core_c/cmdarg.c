@@ -2,12 +2,12 @@
 
 #include <stdio.h>
 
-int main (int argc, char ** argv) {
+int main(int argc, char ** argv) {
 	int i = 1; 
- l1:	printf ("%s\n", argv[i]);
+ l1:	printf("%s\n", argv[i]);
 	++i;
 
-	if (i < argc)
+	if(i < argc)
 		goto l1;
 	
 	return 0;
