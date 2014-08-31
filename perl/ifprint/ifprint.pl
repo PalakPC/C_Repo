@@ -12,7 +12,6 @@ my $f = '';
 
 usage() 
    if(@ARGV < 1 or !GetOptions('v' => \$v, 'f' => \$f, 'i=s' => \$input, 'o=s' => \$output));
-
 sub usage {
    print "Unknown option: @_\n" if (@_);
    print "usage: program [--v or --f] [--i inputfile] [--o outputfile]\n";
@@ -23,7 +22,6 @@ my $regexv = qr|\b((int\|float)\s[A-Z, a-z, _]\w*(?!\())\b|;
 my $regexf = qr|\b((int\|float)\s[A-Z, a-z, _]\w*)\b|;
 
 open(FILE, "<$input");
-
 open(OUT, ">$output");
 
 if($v eq '1' && $f eq '') {
@@ -33,7 +31,6 @@ if($v eq '1' && $f eq '') {
       }
    }
 }
-
 elsif($v eq '' && $f eq 1) {
    while(<FILE>) {
       while(/$regexf/g) {
@@ -41,7 +38,6 @@ elsif($v eq '' && $f eq 1) {
       }
    }
 }
-
 else {
    print "Invalid arguments\n";
 }

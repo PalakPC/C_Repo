@@ -1,8 +1,6 @@
-C program to print alphabets to a file using separate threads for each alphabet.
+C program to print words to a file using separate threads for each alphabet.
 
 It can be compiled as follows:
 gcc mthread.c -o mthread -lpthread (lpthread is to include pthread.h).
 
-On execution, it prints 50 randomly generated words to a file.
-
-Currently not done. Some improvements required.
+Upon execution, it prints 500 randomly generated words to a file. Length of these words is between 4 and 9 and is random.

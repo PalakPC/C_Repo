@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
    close (ifile);
 }
 
-char ** allocate2D (int *rows, int *cols) {
+char ** allocate2D(int *rows, int *cols) {
    char **arr2D;
    int *i;
    i = (int *) malloc (sizeof (int));
@@ -85,7 +85,7 @@ char ** allocate2D (int *rows, int *cols) {
    return arr2D;
 }
 
-void (quick) (int *low, int *high) {
+void (quick)(int *low, int *high) {
    int *i, *j, *temp, *pivot;
    char *swap;	
    i = (int*) malloc (sizeof (int));
