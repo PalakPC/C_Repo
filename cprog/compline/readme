@@ -2,34 +2,21 @@ C programs to demonstrate compilation pipeline.
 
 It can print fibonacci number and reverse string, or either of these tasks, depending upon the compilation and command-line arguments provided.
 
-
 Compilation can be done with this command:
-
 gcc -Wall fibeverse.c reverse.c fibonacci.c -o fibeverse
 
 Program can be rum with two arguments: a number, then a string (in quotes).
-
 The first line prints fibonacci number. Second line gives the string provided, with words reversed. Makefile performs this task.
 
-
 When compiled with this command, it computes only the Fibonacci number:
-
 gcc -Wall -DFIBONACCI fibeverse.c reverse.c fibonacci.c -o fibonacci
-
 and can be run like this:
-
 ./fibonacci 8
 
-
 When compiled as follows, it reverses the string provided as first argument:
-
 gcc -Wall -DREVERSE fibeverse.c reverse.c fibonacci.c -o reverse
-
 and can be run like this:
-
 ./reverse 'a brave new world'
 
-
 It works normally when both compiler flags are provided:
-
 gcc -Wall -DFIBONACCI -DREVERSE fibeverse.c reverse.c fibonacci.c -o fibeverse

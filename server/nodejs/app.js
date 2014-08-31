@@ -3,39 +3,36 @@
 var mysql = require("mysql");
 var express = require("express");
 var path = require("path");
-var config = require("./config/config.js");
-
-var app = express();
-
 var SERVER_PORT = 8888;
 
+var app = express();
 app.use(express.static(__dirname + "/views")); 
 
 var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'palak',
-	database: 'files'
+   host: 'localhost',
+   user: 'root',
+   password: 'palak',
+   database: 'files'
 });
 connection.connect();
 
 app.get('/', function(req, res) {
-	res.redirect("home");
+   res.redirect("home");
 });
 
 app.get("/home", function(req, res, next) {
-	res.sendfile("home.html", {root: "./views/"});
+   res.sendfile("home.html", {root: "./views/"});
 });
 
 app.get("/inputQuery", function(req, res) {
-	connection.query('select * from file', function(err, rows, fs){
-		if(err) {
-			console.log('Something is broken');
-			console.log(err);
-			console.log(fs);
-		}
-		res.json(rows);
-	});
+   connection.query('select * from file', function(err, rows, fs) {
+      if(err) {
+         console.log('Something is broken');
+         console.log(err);
+         console.log(fs);
+      }
+      res.json(rows);
+   });
 });
 
 app.listen(process.env.PORT || SERVER_PORT);
