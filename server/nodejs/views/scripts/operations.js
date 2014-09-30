@@ -1,4 +1,4 @@
-/*Script to print table.*/
+//Script to print table.
 
 $(document).ready(function() {
    jQuery('#wrapper').val("");

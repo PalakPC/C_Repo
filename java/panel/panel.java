@@ -1,4 +1,4 @@
-/*Java program to display multiple windows with buttons to maneuver between them.*/
+//Java program to display multiple windows with buttons to maneuver between them.
 
 package panel;
 

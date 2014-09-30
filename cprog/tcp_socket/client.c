@@ -96,5 +96,5 @@ int conn(char *host, int port) {
 void disconn(int fd) {   /*To disconnect from the server.*/
    if(debug) 
       printf("Disconn (%d)\n", fd);
-   shutdown(fd, 2);    /*2 means future sends & receives are disallowed.*/
+   shutdown(fd, 2); /*2 means future sends & receives are disallowed.*/
 }

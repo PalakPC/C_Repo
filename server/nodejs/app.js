@@ -1,4 +1,4 @@
-/*Node.js server to print the rows of a MySQL table to an HTML page on button click.*/
+//Node.js server to print the rows of a MySQL table to an HTML page on button click.
 
 var mysql = require("mysql");
 var express = require("express");

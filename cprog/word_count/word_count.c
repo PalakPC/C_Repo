@@ -55,70 +55,70 @@ int main(int argc, char *argv[]) {
    free(j);
    free(k);
    free(str);
-   low = (int*) malloc (sizeof (int));
-   high = (int*) malloc (sizeof (int));
+   low = (int*) malloc(sizeof(int));
+   high = (int*) malloc(sizeof(int));
    *low = 0;
    *high = (*count) - 1;
    quicksort = quick;
-   (*quicksort) (low, high);
-   free (low);
-   free (high);
+   (*quicksort)(low, high);
+   free(low);
+   free(high);
    (*i) = 0;
-   while ((*i) < (*count)) {
-      printf ("%s\t%d\n", s[*i], *(carr + (*i)));
+   while((*i) < (*count)) {
+      printf("%s\t%d\n", s[*i], *(carr + (*i)));
       (*i)++;
    }	
-   free (i);
-   free (count);
-   free (carr);
-   free (s);
-   close (ifile);
+   free(i);
+   free(count);
+   free(carr);
+   free(s);
+   close(ifile);
 }
 
-char ** allocate2D(int *rows, int *cols) {
+char **allocate2D(int *rows, int *cols) {
    char **arr2D;
    int *i;
-   i = (int *) malloc (sizeof (int));
-   arr2D = (char**) malloc ((*rows) * sizeof (char*));
-   for ((*i) = 0; (*i) < (*rows); (*i)++)
-      arr2D[*i] = (char*) malloc ((*cols) * sizeof(char));
+   i = (int *) malloc(sizeof(int));
+   arr2D = (char**) malloc((*rows) * sizeof(char*));
+   for((*i) = 0; (*i) < (*rows); (*i)++)
+      arr2D[*i] = (char*) malloc((*cols) * sizeof(char));
    return arr2D;
 }
 
 void (quick)(int *low, int *high) {
    int *i, *j, *temp, *pivot;
    char *swap;	
-   i = (int*) malloc (sizeof (int));
-   j = (int*) malloc (sizeof (int));
-   pivot = (int*) malloc (sizeof (int));
-   swap = (char*) malloc (30 * sizeof (char));	
+   i = (int*) malloc(sizeof(int));
+   j = (int*) malloc(sizeof(int));
+   pivot = (int*) malloc(sizeof(int));
+   swap = (char*) malloc(30 * sizeof(char));	
    *i = *low;
    *j = *high;
    *pivot = *(carr + ((*low) + ((*high) - (*low)) / 2));
-   while ((*i) <= (*j)) {
-      while (*(carr + (*i)) < (*pivot)) 
+   while((*i) <= (*j)) {
+      while(*(carr + (*i)) < (*pivot)) 
          ++(*i);
-      while (*(carr + (*j)) > (*pivot))
+      while(*(carr + (*j)) > (*pivot))
          --(*j);
-      if ((*i) <= (*j)) {
-         temp = (int *) malloc (sizeof (int));
+      if((*i) <= (*j)) {
+         temp = (int *) malloc(sizeof(int));
          *temp = *(carr + (*i));
-         strcpy (swap, s[*i]);
+         strcpy(swap, s[*i]);
          *(carr + (*i)) = *(carr + (*j));
-         strcpy (s[*i], s[*j]);
+         strcpy(s[*i], s[*j]);
          *(carr + (*j)) = *temp;
-         strcpy (s[*j], swap);
-         free (temp);
+         strcpy(s[*j], swap);
+         free(temp);
          ++(*i);
          --(*j);
       }
    }
-   if ((*low) < (*j)) 
-      (*quicksort) (low, j);
+   if((*low) < (*j)) 
+      (*quicksort)(low, j);
    if ((*i) < (*high)) 
-      (*quicksort) (i, high);
-   free (i);
-   free (j);
-   free (pivot);
-   free (swap);
+      (*quicksort)(i, high);
+   free(i);
+   free(j);
+   free(pivot);
+   free(swap);
 }

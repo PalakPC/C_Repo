@@ -13,7 +13,7 @@ my $f = '';
 usage() 
    if(@ARGV < 1 or !GetOptions('v' => \$v, 'f' => \$f, 'i=s' => \$input, 'o=s' => \$output));
 sub usage {
-   print "Unknown option: @_\n" if (@_);
+   print "Unknown option: @_\n" if(@_);
    print "usage: program [--v or --f] [--i inputfile] [--o outputfile]\n";
    exit;
 }

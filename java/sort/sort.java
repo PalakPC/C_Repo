@@ -1,4 +1,4 @@
-/*Java program to sort the given command-line float arguments in ascending order using quicksort algorithm.*/
+//Java program to sort the given command-line float arguments in ascending order using quicksort algorithm.
 
 public class sort { 
    static float[] numbers;
@@ -42,7 +42,7 @@ public class sort {
       numbers = new float[50];	
       while(num < args.length) {
          try {
-            numbers[num] =  Float.parseFloat(args[num]);    /*Parsing command-line arguments to float.*/
+            numbers[num] =  Float.parseFloat(args[num]);    //Parsing command-line arguments to float.
          }			
          catch(NumberFormatException e) {
             System.out.println("Your argument is a non-float");
