@@ -1,0 +1,3 @@
+C program to print a list of all words in a file along with their count in decreasing order.
+
+The file is to be given as command-line argument.
