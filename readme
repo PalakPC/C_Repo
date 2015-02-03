@@ -1,4 +1,4 @@
-C :
+My work in C :
 
 1. encrypt -    Encrypts or decrypts a message given by user using a passkey.
 2. compline -   Demonstrates compilation pipeline. Prints fibonacci number or reverses string or both depending upon compilation and command-line arguments provided.
