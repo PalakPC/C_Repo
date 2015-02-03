@@ -1,7 +1,0 @@
-C program to encrypt and decrypt messages using a passkey.
-
-You can choose whether to encrypt or decrypt a message.
-
-If you wish to encrypt, enter the message and provide a passkey. The encrypted message will then be written to the file "output.txt".
-
-If you wish to decrypt, just provide the correct passkey and the encrypted code in "output.txt" will be decrypted and displayed.

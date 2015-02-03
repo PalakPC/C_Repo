@@ -1,9 +1,0 @@
-Perl script to print the instances of all ints and floats of code written in a file to another file along with line number.
-
-The input and otuput files should both be specified as a command-line arguments.
-
-Run the script as follows:
-./ifprint.pl --v --i <input file name> --o <output file name>
-
-'v' symbolizes that only variables have to be reported. 'f' instead would report function names as well.
-Only 'v' and 'f' can be used.

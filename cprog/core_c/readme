@@ -1,6 +1,0 @@
-C programs for basics in writing code :
-
-1. trinum.c -	Program to print first hundred triangular numbers ( -lm should be given at the end of compilation statement for gcc, to include math.h).
-2. fact.c -	Program to print factorial of 4 and 5.
-3. cmdarg.c -	Program to print given command-line arguments using goto and if.
-4. oddnum.c - 	Program to print odd numbers between 0 and 10 by seven different ways.
